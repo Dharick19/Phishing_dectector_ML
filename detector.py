@@ -197,7 +197,7 @@ def check_virustotal(url: str, api_key: str) -> dict:
     import requests as req
     import base64
 
-    if not api_key or api_key == "d736c5f7e5323ade2e05cca6e9be9388d734e013fa43eeab50ab3607a83fdda2":
+    if not api_key or api_key == "YOUR API KEY":
         return {"error": "No API key configured", "available": False}
 
     try:
