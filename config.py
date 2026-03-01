@@ -5,7 +5,7 @@
 #
 
 
-VT_API_KEY = "d736c5f7e5323ade2e05cca6e9be9388d734e013fa43eeab50ab3607a83fdda2"
+VT_API_KEY = "Your API key"
 
 # Server settings
 HOST = "0.0.0.0"
