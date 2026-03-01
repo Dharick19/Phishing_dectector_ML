@@ -1,0 +1,89 @@
+# 🎣 Phishing Detector Pro
+
+Professional phishing URL detection with ML, VirusTotal API, HTML reports, and a Flask web dashboard.
+
+---
+
+## 🚀 Quick Start
+
+### 1. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 2. (Optional) Add VirusTotal API key
+- Get a FREE key at: https://www.virustotal.com/gui/join-us
+- Open `config.py` and replace `YOUR_VT_API_KEY` with your key
+
+### 3. Run the dashboard
+```bash
+python app.py
+```
+
+### 4. Open in browser
+```
+http://localhost:5000
+```
+
+---
+
+## 📁 Project Structure
+
+```
+phishing_pro/
+├── app.py                  # Flask web dashboard
+├── detector.py             # Core ML + rules + VirusTotal engine
+├── report_generator.py     # HTML report exporter
+├── config.py               # API keys & settings
+├── requirements.txt
+├── phishing_history.db     # SQLite scan history (auto-created)
+└── reports/                # Downloaded HTML reports (auto-created)
+```
+
+---
+
+## 🧠 How It Works
+
+### Detection Engine (2 layers)
+| Layer | Weight | Description |
+|---|---|---|
+| Rule Engine | 40% | 20+ heuristic checks |
+| ML Model | 60% | Random Forest classifier |
+
+### Risk Score
+| Score | Verdict |
+|---|---|
+| 70–100 | 🔴 PHISHING |
+| 40–69 | 🟡 SUSPICIOUS |
+| 0–39 | 🟢 LIKELY SAFE |
+
+### Features checked
+- IP address in URL
+- Suspicious TLDs (.tk .ml .xyz .cf etc)
+- Brand spoofing in subdomain
+- URL length & entropy
+- @ symbol, double slashes
+- Encoded characters
+- URL shorteners
+- HTTPS presence
+- Keyword analysis (login, verify, secure...)
+
+---
+
+## 🌐 VirusTotal Integration
+Enable the checkbox in the dashboard to check URLs against 70+ antivirus engines via the VirusTotal API.
+Free API key allows 500 lookups/day.
+
+---
+
+## 📊 HTML Reports
+Click **Download HTML Report** after any scan to get a standalone HTML file with:
+- Verdict & risk score
+- All triggered risk factors
+- VirusTotal results
+- Full extracted features table
+
+---
+
+## ⚠️ Legal Notice
+For educational and research use only. Only scan URLs you have permission to test.
